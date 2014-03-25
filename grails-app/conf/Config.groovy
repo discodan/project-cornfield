@@ -117,8 +117,10 @@ log4j = {
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.useBasicAuth = true
+grails.plugin.springsecurity.password.encodeHashAsBase64 = true
+grails.plugin.springsecurity.password.bcrypt.logrounds = 16
 grails.plugin.springsecurity.basic.realmName = "IDT911 Cornfield API"
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.idt911.cornfield.User'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.idt911.cornfield.ApiUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.idt911.cornfield.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.idt911.cornfield.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
@@ -130,4 +132,21 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
 ]
+grails.mime.types = [ // the first one is the default format
+	all:           '*/*', // 'all' maps to '*' or the first available format in withFormat
+	atom:          'application/atom+xml',
+	css:           'text/css',
+	csv:           'text/csv',
+	form:          'application/x-www-form-urlencoded',
+	html:          ['text/html','application/xhtml+xml'],
+	js:            'text/javascript',
+	json:          ['application/json', 'text/json'],
+	multipartForm: 'multipart/form-data',
+	rss:           'application/rss+xml',
+	text:          'text/plain',
+	hal:           ['application/hal+json','application/hal+xml'],
+	xml:           ['text/xml', 'application/xml']
+]
+
+grails.mime.use.accept.header = true
 

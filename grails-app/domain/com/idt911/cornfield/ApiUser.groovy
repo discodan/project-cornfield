@@ -1,6 +1,6 @@
 package com.idt911.cornfield
 
-class User {
+class ApiUser {
 
 	transient springSecurityService
 

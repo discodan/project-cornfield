@@ -23,9 +23,9 @@ class IDT911UserDetailsService implements GrailsUserDetailsService {
 
    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-      User.withTransaction { status ->
+      ApiUser.withTransaction { status ->
 
-         User user = User.findByUsername(username)
+         ApiUser user = ApiUser.findByUsername(username)
          if (!user) throw new UsernameNotFoundException(
                       'User not found', username)
 

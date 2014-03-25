@@ -41,12 +41,11 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenCentral()
         mavenRepo 'http://repo.spring.io/milestone'
+		mavenRepo "https://codevault.idt911.local/nexus/content/groups/external"
     }
 
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        // runtime 'mysql:mysql-connector-java:5.1.27'
-        // runtime 'org.postgresql:postgresql:9.3-1100-jdbc41'
+        runtime 'postgresql:postgresql:9.1-901.jdbc4'
     }
 
     plugins {
