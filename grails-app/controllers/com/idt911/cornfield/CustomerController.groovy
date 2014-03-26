@@ -5,10 +5,14 @@ import grails.converters.XML
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class CustomerController {
-
+	
+	static expose = ['jmx']
+	int counter
+	
 	def index() { }
 
 	def save() {
+		def s = counter++
 		def format = request.format
 		def acceptHeader = request.getHeader('Accept').toString()
 		def customer

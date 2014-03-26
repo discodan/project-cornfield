@@ -46,10 +46,12 @@ grails.project.dependency.resolution = {
 
     dependencies {
         runtime 'postgresql:postgresql:9.1-901.jdbc4'
+		
     }
 
     plugins {
 		compile ':spring-security-core:2.0-RC2'
+		compile ':jmx:0.9'
         // plugins for the build system only
         build ":tomcat:7.0.50.1"
 
